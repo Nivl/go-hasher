@@ -22,7 +22,7 @@ func (h Bcrypt) Hash(raw string) (string, error) {
 }
 
 // IsValid checks if a hash and a string match
-func (h Bcrypt) IsValid(hash string, raw string) bool {
+func (h Bcrypt) IsValid(hash, raw string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(raw))
 	return err == nil
 }
